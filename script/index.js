@@ -109,8 +109,8 @@ function filterTags(list) {
       tagTshirts.push(list[i]);
     }
   }
-  return { tagTshirts, tagAccessories };
 }
+filterTags(data)
 
 function filterCards(menu) {
   for (let i = 0; i < menu.length; i++) {
