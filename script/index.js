@@ -8,6 +8,7 @@ const countProduct = document.querySelector(".count-product");
 const totalValues = document.querySelector(".total-values");
 const cartEmpty = document.querySelector(".cart-empty");
 let cartValue = 0;
+let cartQuantity = 0;
 
 function allCards(product) {
   ulProduct.innerHTML = "";
@@ -75,7 +76,8 @@ function allCards(product) {
       titleProductCart.innerHTML = e.target.dataset.h3;
       promotionProductCart.innerHTML = e.target.dataset.p;
       removeCart.innerHTML = "Remover produto";
-      countProduct.innerHTML++;
+      cartQuantity++;
+      countProduct.innerHTML = cartQuantity;
       cartValue += product[i].discount;
       totalValues.innerHTML = `R$ ${cartValue.toFixed(2)}`;
 
@@ -84,12 +86,13 @@ function allCards(product) {
       cartList.append(listProductCart);
 
       removeCart.addEventListener("click", function (event) {
-        countProduct.innerHTML--;
+        cartQuantity--;
+        countProduct.innerHTML = cartQuantity;
         cartValue -= product[i].discount;
         totalValues.innerHTML = `R$ ${cartValue.toFixed(2)}`;
         event.target.parentNode.parentNode.remove();
-
-        if (cartValue == 0) {
+        console.log(cartValue)
+        if (cartQuantity == 0) {
           cartEmpty.className = "cart-empty";
         }
       });

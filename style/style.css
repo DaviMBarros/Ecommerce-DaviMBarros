@@ -111,6 +111,7 @@ main {
   border: none;
   background-color: transparent;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .buttonCart:hover {
@@ -144,6 +145,7 @@ main {
   border: none;
   background-color: #2e245e;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .search-button:hover {
@@ -195,6 +197,7 @@ main {
   border: none;
   background-color: transparent;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .buttonRemoveCart:hover {
